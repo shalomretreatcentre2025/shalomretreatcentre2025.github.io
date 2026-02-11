@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retreats - The Shalom Retreat Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="Shalom_logo_transparent.png" alt="Shalom Retreat Centre">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bookings.html" class="active">Retreats</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="background-animation subtle">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Upcoming Retreats</h1>
+            <p class="fade-in-delay-1">Join us for transformative experiences of peace, renewal, and spiritual growth</p>
+        </div>
+    </section>
+
+    <!-- Retreats Grid -->
+    <section class="retreats-section">
+        <div class="container">
+            <div class="retreats-grid" id="retreatsGrid">
+                <!-- Retreats will be loaded here -->
+            </div>
+
+                    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 The Shalom Retreat Centre. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ========================================
+        // EDIT YOUR RETREATS HERE
+        // ========================================
+        // To add a retreat: Copy a block (from { to }), paste it, and update the details
+        // To remove: Delete the entire block
+        // Don't forget commas between retreats!
+        
+        const retreatsData = [
+            {
+                "id": "silent",
+                "name": "Pre-Lenten Mini-Retreat",
+                "tag": "Afternoon Retreat",
+                "date": "February 14th 12:00pm-3:30pm",
+                "image": "https://i.imgur.com/LQ2xQhd.jpeg?w=800&q=80",
+                "description": "Join us in preparing for Lent with talks by Fr. Tim Collins and Fr. Colm Mannion, led adoration, and Mass..",
+                "sheetName": "Pre-Lenten"
+            },
+            {
+                "id": "keane",
+                "name": "Day of Prayer With Fr. Keane",
+                "tag": "Half Day Retreat",
+                "date": "February 22nd 11:45am-4:30am",
+                "image": "https://i.imgur.com/C9zRNUt.jpeg?w=800&q=80",
+                "description": "ADay of Prayer led by Fr. John Keane with Eucharistic Adoration, Testimony, Talk, Music and Eucharistic Blessing.",
+                "sheetName": "Pre-Lenten"
+            }
+            
+            // To add more retreats, add a comma above and paste a new block here:
+            // {
+            //     "id": "advent",
+            //     "name": "Advent Preparation Retreat",
+            //     "tag": "Day Retreat",
+            //     "date": "December 3, 2026",
+            //     "image": "https://images.unsplash.com/photo-YOUR-IMAGE",
+            //     "description": "Your description here",
+            //     "sheetName": "Advent Retreat"
+            // }
+        ];
+        
+        // ========================================
+        // CODE TO DISPLAY RETREATS (Don't edit below unless you know what you're doing)
+        // ========================================
+        
+        function displayRetreats(retreats) {
+            const grid = document.getElementById('retreatsGrid');
+            grid.innerHTML = ''; // Clear existing content
+            
+            let delayIndex = 1;
+            
+            retreats.forEach(retreat => {
+                const card = document.createElement('div');
+                card.className = `retreat-card fade-in-delay-${delayIndex}`;
+                
+                card.innerHTML = `
+                    <div class="retreat-image">
+                        <div class="retreat-tag">${retreat.tag}</div>
+                        <img src="${retreat.image}" alt="${retreat.name}">
+                    </div>
+                    <div class="retreat-content">
+                        <h3>${retreat.name}</h3>
+                        <div class="retreat-date">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            ${retreat.date}
+                        </div>
+                        <p>${retreat.description}</p>
+                        <a href="retreat-signup.html?retreat=${retreat.id}" class="btn-secondary">Learn More & Register</a>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+                delayIndex = (delayIndex % 4) + 1;
+            });
+        }
+        
+        // Display retreats when page loads
+        displayRetreats(retreatsData);
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retreat Registration - The Shalom Retreat Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="Shalom_logo_transparent.png" alt="Shalom Retreat Centre">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bookings.html">Retreats</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="background-animation subtle">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="registration-content fade-in">
+                <a href="bookings.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Retreats
+                </a>
+                
+                <h1 id="retreatTitle">Retreat Registration</h1>
+                <p class="subtitle">Please fill out the form below to register for this retreat.</p>
+
+                <form id="registrationForm" class="registration-form">
+                    <input type="hidden" id="retreatName" name="retreatName">
+                    <input type="hidden" id="sheetName" name="sheetName">
+                    
+                    <h3>Personal Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Name *</label>
+                            <input type="text" id="Name" name="Name" required>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+
+                    <h3>Retreat Details</h3>
+                    
+                    
+                    <div class="form-group">
+                        <label for="dietary">Dietary Requirements</label>
+                        <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know of any dietary restrictions or allergies"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medical">Medical Information</label>
+                        <textarea id="medical" name="medical" rows="3" placeholder="Any medical conditions we should be aware of?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Notes or Questions</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit Registration</button>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Thank you for registering! We'll be in touch soon with more details.
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                    <span>Oops! Something went wrong. Please try again.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 The Shalom Retreat Centre. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Retreat information - UPDATE THIS when you add retreats to bookings.html
+        // The 'id' must match what's in bookings.html
+        const retreatInfo = {
+            'silent': {
+                name: 'Pre-Lenten Mini-Retreat',
+                sheetName: 'Pre-Lenten'
+            },
+            'keane': {
+                name: 'Day of Prayer With Fr. Keane',
+                sheetName: 'Day of Prayer'
+            }
+            // When you add a new retreat to bookings.html, add it here too:
+            // 'advent': {
+            //     name: 'Advent Preparation Retreat',
+            //     sheetName: 'Advent Retreat'
+            // }
+        };
+        
+        // Get retreat ID from URL and set form values
+        const urlParams = new URLSearchParams(window.location.search);
+        const retreatId = urlParams.get('retreat');
+        
+        if (retreatId && retreatInfo[retreatId]) {
+            document.getElementById('retreatTitle').textContent = retreatInfo[retreatId].name;
+            document.getElementById('retreatName').value = retreatInfo[retreatId].name;
+            document.getElementById('sheetName').value = retreatInfo[retreatId].sheetName;
+        } else {
+            document.getElementById('retreatTitle').textContent = 'Retreat Registration';
+        }
+    </script>
+</body>
+</html>
