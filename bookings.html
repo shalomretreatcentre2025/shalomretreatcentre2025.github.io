@@ -54,30 +54,7 @@
                 <!-- Retreats will be loaded here -->
             </div>
 
-            <!-- Update Info Box -->
-            <div class="info-box fade-in-delay-5">
-                <h3>✨ How to Update Retreats</h3>
-                <p><strong>To add, edit, or remove retreats:</strong></p>
-                <ol>
-                    <li><strong>Open this file (<code>bookings.html</code>)</strong> in any text editor</li>
-                    <li><strong>Scroll down</strong> to find the <code>retreatsData</code> section (around line 75)</li>
-                    <li><strong>To add a retreat:</strong> Copy an entire block from <code>{</code> to <code>}</code>, paste it, and update the details</li>
-                    <li><strong>To edit:</strong> Find the retreat and change any field (name, date, image, etc.)</li>
-                    <li><strong>To remove:</strong> Delete the entire block from <code>{</code> to <code>}</code></li>
-                    <li><strong>Save and upload</strong> - changes appear instantly!</li>
-                </ol>
-                
-                <p style="margin-top: 1rem; padding: 1rem; background: rgba(90, 125, 154, 0.1); border-radius: 8px;">
-                    <strong>💡 Fields you can edit:</strong><br>
-                    • <code>name</code> - Retreat title<br>
-                    • <code>tag</code> - Badge text (Weekend Retreat, Day Retreat, etc.)<br>
-                    • <code>date</code> - When it happens<br>
-                    • <code>image</code> - Picture URL (get free images from <a href="https://unsplash.com" target="_blank">Unsplash.com</a>)<br>
-                    • <code>description</code> - Brief description<br>
-                    • <code>sheetName</code> - Google Sheets tab name
-                </p>
-            </div>
-        </div>
+                    </div>
     </section>
 
     <!-- Footer -->
@@ -99,41 +76,42 @@
         const retreatsData = [
             {
                 "id": "silent",
-                "name": "Silent Contemplation Retreat",
-                "tag": "Weekend Retreat",
-                "date": "March 14-16, 2026",
-                "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-                "description": "Experience the profound peace of silence in nature. Three days of contemplative practices, guided meditation, and personal reflection.",
-                "sheetName": "Silent Retreat"
+                "name": "Pre-Lenten Mini-Retreat",
+                "tag": "Afternoon Retreat",
+                "date": "February 14th 12:00pm-3:30pm",
+                "image": "https://i.imgur.com/LQ2xQhd.jpeg?w=800&q=80",
+                "description": "Join us in preparing for Lent with talks by Fr. Tim Collins and Fr. Colm Mannion, led adoration, and Mass..",
+                "sheetName": "Pre-Lenten"
             },
             {
-                "id": "renewal",
-                "name": "Journey of Spiritual Renewal",
-                "tag": "5-Day Retreat",
-                "date": "April 7-11, 2026",
-                "image": "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=800&q=80",
-                "description": "A transformative journey combining prayer, scripture reflection, and spiritual direction. Reconnect with your faith and find clarity.",
-                "sheetName": "Renewal Retreat"
+                "id": "keane",
+                "name": "Day of Prayer With Fr. Keane",
+                "tag": "Half Day Retreat",
+                "date": "February 22nd 11:45am-4:30am",
+                "image": "https://i.imgur.com/C9zRNUt.jpeg?w=800&q=80",
+                "description": "ADay of Prayer led by Fr. John Keane with Eucharistic Adoration, Testimony, Talk, Music and Eucharistic Blessing.",
+                "sheetName": "Pre-Lenten"
             },
             {
-                "id": "healing",
-                "name": "Healing & Restoration Retreat",
-                "tag": "Weekend Retreat",
-                "date": "May 2-4, 2026",
-                "image": "https://images.unsplash.com/photo-1445262102387-5fbb30a5e59d?w=800&q=80",
-                "description": "Find healing for body, mind, and spirit through guided prayer ministry, inner healing sessions, and restorative practices.",
-                "sheetName": "Healing Retreat"
+                "id": "greaterlove",
+                "name": "No Greater Love: Lenten Journey",
+                "tag": "Weekly Retreat",
+                "date": "Weekly during Lent",
+                "image": "https://i.postimg.cc/2yFshWkz/No-Greater-Love-Icon-1.webp?w=800&q=80",
+                "description": "A Five Week Journey Reflecting on the Five Sorrowful Mysteries of the Rosary, using the video series and materials by Dr. Edward Sri.",
+                "sheetName": "No Greater Love"
             },
-            {
-                "id": "nature",
-                "name": "Walking with God in Nature",
-                "tag": "Day Retreat",
-                "date": "June 15, 2026",
-                "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-                "description": "A one-day immersive experience combining contemplative hiking, nature meditation, and outdoor prayer in God's creation.",
-                "sheetName": "Nature Retreat"
-            }
             
+ 	    {
+                "id": "lectiodivina",
+                "name": "Lectio Divina",
+                "tag": "Weekly Retreat",
+                "date": "Every Wednesday during Lent after 10am mass",
+                "image": "https://i.postimg.cc/jSrcnjCL/rsv-2ce-bibles-v0-o5h9pyziehvc1.jpg?w=800&q=80",
+                "description": "Sacred Reading for Lent Every Wednesday Morning following the 10am Mass in Charleville Parish Church. Everyone Welcome.",
+                "sheetName": "Lectio Divina Lent"
+            }
+
             // To add more retreats, add a comma above and paste a new block here:
             // {
             //     "id": "advent",
