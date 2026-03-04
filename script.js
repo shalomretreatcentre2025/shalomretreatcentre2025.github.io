@@ -6,7 +6,7 @@ const retreatsData = [
         name: "Saint Patrick: A Mini-Retreat",
         tag: "Day Retreat",
         date: "Sat. 14th March 10:45am\u20132:30pm",
-        image: "https://i.postimg.cc/bJmkKSw-P/st-patrick-retreat.jpg?w=800&q=80",
+        image: "https://i.postimg.cc/Vvt3rKDG/st-patrick-retreat.jpg?w=800&q=80",
         description: "A Mini-Retreat in honour of St. Patrick.",
         sheetName: "Patrick Day"
     },
