@@ -7,7 +7,7 @@ const retreatsData = [
         tag: "Day Retreat",
         date: "Sat. 14th March 10:45am\u20132:30pm",
         image: "https://i.postimg.cc/Vvt3rKDG/st-patrick-retreat.jpg?w=800&q=80",
-        description: "A Mini-Retreat in honour of St. Patrick.",
+        description: "A Mini-Retreat in honour of St. Patrick, with a talk by Sr. Bernadette Maria on Sr. Agnes McSweeney - The author of hail glorious St. Patrick",
         sheetName: "Patrick Day"
     },
     {
@@ -16,16 +16,16 @@ const retreatsData = [
         tag: "Dawn Event",
         date: "Tues. 17th March 5:45am",
         image: "https://i.postimg.cc/TPT7rmyb/D658157C-52FB-4743-A9CB-766375A1D69C.png?w=800&q=80",
-        description: "A call to all Christians to rise to the challenge of Saint Patrick.",
+        description: "A call to all Christians to rise to the challenge of Saint Patrick. Morning includes Eucharistic Adoration.",
         sheetName: "Patrick Morn"
     },
     {
         id: "josephtalk",
-        name: "Imitating the Virtues of Saint Joseph",
+        name: "Imitating the Virtues of Saint Joseph - Young Men's Talk",
         tag: "Evening Talk",
         date: "Thurs 19th March 6:00pm",
         image: "https://i.postimg.cc/zGytp5pb/st-joseph-retreat.jpg?w=800&q=80",
-        description: "A talk by Fr. David Barrins O.P. on imitating the virtues of St. Joseph.",
+        description: "A talk by Fr. David Barrins O.P. on imitating the virtues of St. Joseph for young men aged 18-40.",
         sheetName: "St Joseph Evening"
     },
     {
