@@ -617,7 +617,12 @@ img {
 .retreat-content p {
     color: var(--text-light);
     line-height: 1.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .retreat-content .btn-secondary {
@@ -626,6 +631,8 @@ img {
     font-size: 1rem;
     text-align: center;
     margin-top: auto;
+    padding-top: 2.3rem;
+    flex-shrink: 0;
 }
 
 /* ===== FORMS ===== */
