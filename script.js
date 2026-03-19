@@ -2,40 +2,22 @@
 // Edit this ONE array to update both the Retreats page and the homepage highlights.
 const retreatsData = [
     {
-        id: "patrickday",
-        name: "Saint Patrick: A Mini-Retreat",
+        id: "silent28march",
+        name: "Silent Day Retreat: Holy Week Prep",
         tag: "Day Retreat",
-        date: "Sat. 14th March 10:45am\u20132:30pm",
-        image: "https://i.postimg.cc/Vvt3rKDG/st-patrick-retreat.jpg?w=800&q=80",
-        description: "A Mini-Retreat in honour of St. Patrick, with a talk by Sr. Bernadette Maria on Sr. Agnes McSweeney - The author of hail glorious St. Patrick",
-        sheetName: "Patrick Day"
+        date: "Sat. 28th March 12pm-4pm",
+        image: "https://i.postimg.cc/J09xrTCb/silent-mini-retreat-mini.png?w=800&q=80",
+        description: "Join us for a mini-silent retreat with talks by Fr. Eamon Roche and Fr. John Mockler. Prepare for Holy Week with silence, prayer, adoration, and Holy Mass",
+        sheetName: "Silent retreat 28th March"
     },
     {
-        id: "patrickmorn",
-        name: "Saint Patrick\u2019s Day Dawn Event",
-        tag: "Dawn Event",
-        date: "Tues. 17th March 5:45am",
-        image: "https://i.postimg.cc/TPT7rmyb/D658157C-52FB-4743-A9CB-766375A1D69C.png?w=800&q=80",
-        description: "A call to all Christians to rise to the challenge of Saint Patrick. Morning includes Eucharistic Adoration.",
-        sheetName: "Patrick Morn"
-    },
-    {
-        id: "josephtalk",
-        name: "Imitating the Virtues of Saint Joseph - Young Men's Talk",
-        tag: "Evening Talk",
-        date: "Thurs 19th March 6:00pm",
-        image: "https://i.postimg.cc/zGytp5pb/st-joseph-retreat.jpg?w=800&q=80",
-        description: "A talk by Fr. David Barrins O.P. on imitating the virtues of St. Joseph for young men aged 18-40.",
-        sheetName: "St Joseph Evening"
-    },
-    {
-        id: "youngmen",
-        name: "Young Men\u2019s Retreat",
-        tag: "Day Retreat",
-        date: "Sun 22nd March 12:30pm",
-        image: "https://i.postimg.cc/7Y6mYDF5/Young-mens-retreat.jpg?w=800&q=80",
-        description: "A day for young men to pray, learn, and build fraternity. Ages 18\u201340.",
-        sheetName: "Young Men's Retreat"
+        id: "divinemercyjohn",
+        name: "Divine Mercy Retreat",
+        tag: "Day Mini-Retreat",
+        date: "Sat. 11th April 12pm-3:15pm",
+        image: "https://i.postimg.cc/vZ6Bx0Fs/divine-mercy-mini.png?w=800&q=80",
+        description: "A mini-retreat on Divine Mercy led by Fr. John Mockler with talks, Adoration, tea coffee & packed lunch, and Holy Mass.",
+        sheetName: "Divine Mercy 11th April"
     }
     // To add a retreat: add a comma after the last entry and paste a new block here.
 ];
