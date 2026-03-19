@@ -6,7 +6,7 @@ const retreatsData = [
         name: "Silent Day Retreat: Holy Week Prep",
         tag: "Day Retreat",
         date: "Sat. 28th March 12pm-4pm",
-        image: "https://i.postimg.cc/J09xrTCb/silent-mini-retreat-mini.png?w=800&q=80",
+        image: "https://i.postimg.cc/5yN5fZrY/silent-mini-retreat-mini.png?w=800&q=80",
         description: "Join us for a mini-silent retreat with talks by Fr. Eamon Roche and Fr. John Mockler. Prepare for Holy Week with silence, prayer, adoration, and Holy Mass",
         sheetName: "Silent retreat 28th March"
     },
@@ -15,7 +15,7 @@ const retreatsData = [
         name: "Divine Mercy Retreat",
         tag: "Day Mini-Retreat",
         date: "Sat. 11th April 12pm-3:15pm",
-        image: "https://i.postimg.cc/vZ6Bx0Fs/divine-mercy-mini.png?w=800&q=80",
+        image: "https://i.postimg.cc/jjP4c6Nq/divine-mercy-mini.png?w=800&q=80",
         description: "A mini-retreat on Divine Mercy led by Fr. John Mockler with talks, Adoration, tea coffee & packed lunch, and Holy Mass.",
         sheetName: "Divine Mercy 11th April"
     }
