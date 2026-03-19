@@ -18,6 +18,15 @@ const retreatsData = [
         image: "https://i.postimg.cc/jjP4c6Nq/divine-mercy-mini.png?w=800&q=80",
         description: "A mini-retreat on Divine Mercy led by Fr. John Mockler with talks, Adoration, tea coffee & packed lunch, and Holy Mass.",
         sheetName: "Divine Mercy 11th April"
+    },
+        {
+        id: "motherdaughterday",
+        name: "Mother Daughter Retreat",
+        tag: "Day Retreat",
+        date: "Sun. 12th April 11:30pm-4:15pm",
+        image: "https://i.postimg.cc/L6wGGkyP/mother-daughter-retreat-mini.png?w=800&q=80",
+        description: "A Day retreat for mothers and daughters with talks, Adoration, tea coffee & packed lunch, and Holy Mass.",
+        sheetName: "Mother Daughter"
     }
     // To add a retreat: add a comma after the last entry and paste a new block here.
 ];
