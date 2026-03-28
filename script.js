@@ -72,7 +72,7 @@ function renderRetreatCards(retreats, containerId, limit) {
         card.innerHTML =
             '<div class="retreat-image">' +
                 '<div class="retreat-tag">' + retreat.tag + '</div>' +
-                '<img src="' + retreat.image + '" alt="' + retreat.name + '" loading="lazy">' +
+                '<img src="' + retreat.image + '" alt="' + retreat.name + '" loading="lazy" style="object-position:' + (retreat.imageFocus || 'center') + '">' +
             '</div>' +
             '<div class="retreat-content">' +
                 '<h3>' + retreat.name + '</h3>' +
@@ -85,10 +85,42 @@ function renderRetreatCards(retreats, containerId, limit) {
                     '</svg>' +
                     retreat.date +
                 '</div>' +
-                '<p>' + retreat.description + '</p>' +
+                '<div class="retreat-desc-wrap"><p>' + retreat.description + '</p></div>' +
                 '<a href="retreat-signup.html?retreat=' + retreat.id + '" class="btn-secondary">Learn More &amp; Register</a>' +
             '</div>';
         grid.appendChild(card);
+
+        // Hover autoscroll on description (not the date)
+        const wrap = card.querySelector('.retreat-desc-wrap');
+        const para = wrap.querySelector('p');
+        let rafId = null;
+        const SPEED = 22; // px per second
+
+        wrap.addEventListener('mouseenter', () => {
+            const overflow = para.scrollHeight - wrap.clientHeight;
+            if (overflow <= 0) return; // nothing to scroll
+            let last = null;
+            function step(ts) {
+                if (last === null) last = ts;
+                const delta = ((ts - last) / 1000) * SPEED;
+                last = ts;
+                wrap.scrollTop = Math.min(wrap.scrollTop + delta, overflow);
+                if (wrap.scrollTop < overflow) rafId = requestAnimationFrame(step);
+            }
+            rafId = requestAnimationFrame(step);
+            wrap.style.overflow = 'auto'; // enable scroll temporarily
+            wrap.style.scrollbarWidth = 'none'; // hide scrollbar (Firefox)
+            wrap.style.msOverflowStyle = 'none';
+        });
+
+        wrap.addEventListener('mouseleave', () => {
+            if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+            // Smoothly reset to top
+            wrap.scrollTo({ top: 0, behavior: 'smooth' });
+            // Re-hide overflow after scroll settles
+            setTimeout(() => { wrap.style.overflow = 'hidden'; }, 400);
+        });
+
         delay = (delay % 4) + 1;
     });
 }
@@ -156,6 +188,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (hero && retreat) {
             document.getElementById('retreatHeroImg').src         = retreat.image;
             document.getElementById('retreatHeroImg').alt         = retreat.name;
+            document.getElementById('retreatHeroImg').style.objectPosition = retreat.imageFocus || 'center';
             document.getElementById('retreatHeroTag').textContent = retreat.tag;
             document.getElementById('retreatHeroTitle').textContent       = retreat.name;
             document.getElementById('retreatHeroDate').textContent        = retreat.date;
